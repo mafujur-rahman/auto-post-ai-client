@@ -1,78 +1,41 @@
+import React from "react";
+
 
 const HeroSection = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-blue-800 min-h-screen text-white">
-      {/* Navbar */}
-      <nav className="flex items-center justify-between p-6 bg-blue-700 shadow-md">
-        <div className="text-2xl font-bold">
-          <a href="/" className="hover:text-gray-300">
-            AutoPost AI
-          </a>
-        </div>
-        <ul className="hidden md:flex space-x-6">
-          <li>
-            <a href="#features" className="hover:text-gray-300">
-              Features
-            </a>
-          </li>
-          <li>
-            <a href="#pricing" className="hover:text-gray-300">
-              Pricing
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="hover:text-gray-300">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-gray-300">
-              Contact
-            </a>
-          </li>
-        </ul>
-        <div className="hidden md:block">
-          <a
-            href="#get-started"
-            className="bg-yellow-400 text-blue-800 font-bold py-2 px-4 rounded hover:bg-yellow-300"
-          >
-            Get Started
-          </a>
-        </div>
-        <button className="md:hidden flex items-center text-2xl">
-          <span className="material-icons">menu</span>
-        </button>
-      </nav>
-
+    <div className="bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700 min-h-screen"> 
       {/* Hero Section */}
-      <header className="flex flex-col md:flex-row items-center justify-between text-center md:text-left px-6 md:px-16 py-20">
-        <div className="max-w-lg">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Automate Your <span className="text-yellow-400">Shorts & Reels</span> Creation
+      <header className="flex flex-col md:flex-row items-center justify-between text-center md:text-left px-8 md:px-16 py-16">
+        {/* Text Content */}
+        <div className="max-w-xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+            Automate Your <span className="text-pink-400">Shorts & Reels</span>
           </h1>
-          <p className="mt-4 text-lg">
-            Leverage AI to create and post stunning short videos to YouTube and Facebook daily. Save time, grow your audience, and focus on creativity!
+          <p className="text-lg text-gray-300 mb-8">
+            Harness the power of AI to create and post engaging short videos to YouTube and Facebook daily. Save time, grow your audience, and achieve your content goals effortlessly.
           </p>
-          <div className="mt-6 space-x-4">
+          <div className="flex justify-center md:justify-start space-x-4">
             <a
               href="#get-started"
-              className="bg-yellow-400 text-blue-800 font-bold py-3 px-6 rounded hover:bg-yellow-300"
+              className="bg-pink-400 text-indigo-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-pink-500 transition duration-300"
             >
               Get Started
             </a>
             <a
               href="#learn-more"
-              className="bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-6 rounded hover:bg-yellow-300 hover:text-blue-800"
+              className="bg-transparent border-2 border-pink-400 text-pink-400 font-bold py-3 px-8 rounded-full hover:bg-pink-500 hover:text-indigo-900 transition duration-300"
             >
               Learn More
             </a>
           </div>
         </div>
+
+        {/* Image */}
         <div className="mt-10 md:mt-0">
           <img
-            src="https://source.unsplash.com/500x500/?technology,ai"
+            src="/banner.webp"
             alt="Hero Graphic"
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-xl transform hover:scale-105 transition duration-500"
           />
         </div>
       </header>
