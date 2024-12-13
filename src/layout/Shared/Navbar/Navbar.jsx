@@ -1,5 +1,6 @@
 
 import  { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +42,13 @@ const Navbar = () => {
 
       {/* Call to Action Button */}
       <div className="hidden md:block">
+        <Link to="/login-register">
         <a
-          href="#get-started"
           className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
         >
           Get Started
         </a>
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}
@@ -81,14 +83,13 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-          <li>
+          <Link to="/login-register">
             <a
-              href="#get-started"
               className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
             >
               Get Started
             </a>
-          </li>
+          </Link>
         </ul>
       )}
     </nav>
