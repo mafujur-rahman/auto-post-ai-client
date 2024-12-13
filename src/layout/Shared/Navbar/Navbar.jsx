@@ -42,7 +42,7 @@ const Navbar = () => {
 
       {/* Call to Action Button */}
       <div className="hidden md:block">
-        <Link to="/login-register">
+        <Link to="/login">
         <a
           className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
         >
@@ -83,7 +83,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-          <Link to="/login-register">
+          <Link to="/login">
             <a
               className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
             >
