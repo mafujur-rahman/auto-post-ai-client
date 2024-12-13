@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const {login} = useContext(AuthContext)
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -12,6 +15,13 @@ const Login = () => {
         const password = form.password.value;
         const loginInfo = { email, password }
         console.log(loginInfo);
+
+        // login
+        login(email,password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
     }
 
     return (

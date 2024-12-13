@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const {createuser} = useContext(AuthContext)
 
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
+
+        // register user
+        createuser(email,password)
+        .then(result =>{
+            const newUser = result.user;
+            console.log(newUser);
+        })
 
         // Password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -28,7 +38,7 @@ const Register = () => {
             return;
         }
 
-        const RegisterInfo = { email, password, confirmPassword };
+        const RegisterInfo = { email, password, name };
         console.log(RegisterInfo);
         setErrorMessage(""); // Clear error message on successful validation
     };
@@ -55,7 +65,20 @@ const Register = () => {
                         Register
                     </h2>
                     <form onSubmit={handleRegister}>
-                        {/* Username or Email */}
+                        {/* Username */}
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your Name"
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-700"
+                            />
+                        </div>
+                        {/* Email */}
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">
                                 Email

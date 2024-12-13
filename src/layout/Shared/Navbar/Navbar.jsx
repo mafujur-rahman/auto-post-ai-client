@@ -46,7 +46,7 @@ const Navbar = () => {
         <a
           className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
         >
-          Get Started
+          Login
         </a>
         </Link>
       </div>
@@ -87,7 +87,7 @@ const Navbar = () => {
             <a
               className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
             >
-              Get Started
+              Login
             </a>
           </Link>
         </ul>
