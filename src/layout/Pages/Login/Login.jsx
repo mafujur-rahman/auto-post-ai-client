@@ -25,18 +25,13 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-600">
+        <div className="min-h-screen flex items-center justify-center bg-[url('/bg-img.jpeg')] bg-cover bg-center h-screen w-full">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full md:flex">
                 {/* Left Section */}
-                <div className="hidden md:flex items-center justify-center w-1/2 bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700 text-white p-8">
+                <div className="hidden md:flex items-center justify-center w-1/2 bg-gradient-to-r from-green-900 via-green-500 to-green-300 text-white p-8">
                     <div>
                         <h1 className="text-3xl font-bold mb-4">Welcome Back!</h1>
                         <p className="text-lg">Connect with people and access everything you need in one place.</p>
-                        <img
-                            src="/login-reg.-img.jpeg"
-                            alt="Welcome illustration"
-                            className="mt-6 rounded-lg shadow-md"
-                        />
                     </div>
                 </div>
 
@@ -56,7 +51,7 @@ const Login = () => {
                                 id="email"
                                 name="email"
                                 placeholder="Enter your email"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700"
                             />
                         </div>
                         {/* Password */}
@@ -69,12 +64,12 @@ const Login = () => {
                                 id="password"
                                 name="password"
                                 placeholder="Enter your password"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700"
                             />
                             <button
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
-                                className="absolute top-2/3 right-3 transform -translate-y-2/3 text-pink-700"
+                                className="absolute top-2/3 right-3 transform -translate-y-2/3 text-green-700"
                             >
                                 {showPassword ? <IoEyeOff /> : <IoEye />}
                             </button>
@@ -82,7 +77,7 @@ const Login = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+                            className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-800 transition duration-300"
                         >
                             Login
                         </button>
@@ -92,7 +87,7 @@ const Login = () => {
                         Don't have an account?
                         <Link to="/register">
                             <button
-                                className="text-pink-600 hover:underline hover:text-pink-800 focus:outline-none pl-2"
+                                className="text-green-600 hover:underline hover:text-green-800 focus:outline-none pl-2"
                             >
                                 Register
                             </button>

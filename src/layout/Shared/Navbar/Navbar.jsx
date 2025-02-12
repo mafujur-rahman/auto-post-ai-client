@@ -1,19 +1,29 @@
 
-import  { useState } from "react";
+import  { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {user, logOut} = useContext(AuthContext)
+
+  // logout user
+  const handleLogOut = () =>{
+    logOut()
+    .then(() =>{
+    console.log('logout successfull')
+    })
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4 bg-opacity-80 backdrop-blur-lg shadow-lg bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700">
+    <nav className="flex items-center justify-between px-8 py-4 bg-opacity-80 backdrop-blur-lg shadow-lg bg-gradient-to-r from-green-900 via-green-800 to-orange-700">
       {/* Logo */}
       <div className="text-2xl font-bold text-white hover:text-pink-400 transition duration-300">
-        <a href="/">AutoPost AI</a>
+        <a href="/">Routine Tracker</a>
       </div>
 
       {/* Desktop Navigation Links */}
@@ -38,17 +48,33 @@ const Navbar = () => {
             Contact
           </a>
         </li>
+        <Link to="/dashboard">
+          <a className="text-white hover:text-pink-300 transition duration-300">
+            Dashboard
+          </a>
+        </Link>
       </ul>
 
       {/* Call to Action Button */}
       <div className="hidden md:block">
-        <Link to="/login">
+        {
+          user ? (
         <a
-          className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"
+          className="bg-green-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-green-500 transition duration-300"
+          onClick={handleLogOut}
+        >
+          LogOut
+        </a>
+          ) : (
+            <Link to="/login">
+        <a
+          className="bg-green-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-green-500 transition duration-300"
         >
           Login
         </a>
         </Link>
+          )
+        }
       </div>
 
       {/* Mobile Menu Button */}
@@ -83,6 +109,11 @@ const Navbar = () => {
               Contact
             </a>
           </li>
+          <Link to="/dashboard">
+          <a className="text-white hover:text-pink-300 transition duration-300">
+            Dashboard
+          </a>
+        </Link>
           <Link to="/login">
             <a
               className="bg-pink-400 text-indigo-900 font-bold py-2 px-6 rounded-full hover:bg-pink-500 transition duration-300"

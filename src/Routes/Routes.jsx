@@ -5,6 +5,8 @@ import Main from "../layout/Main";
 import Home from "../layout/Pages/Home/Home";
 import Login from "../layout/Pages/Login/Login";
 import Register from "../layout/Pages/Register/Register";
+import Dashboard from "../layout/Pages/Dashboard/Dashboard";
+import VideoUploadForm from "../layout/Pages/VideoUploadForm/VideoUploadForm";
 
 
 
@@ -24,6 +26,14 @@ export const router = createBrowserRouter([
         {
           path: "/register",
           element: <Register />
+        },
+        {
+          path: '/dashboard',
+          element: <Dashboard />
+        },
+        {
+          path: '/video-upload-form',
+          element: <VideoUploadForm />
         }
       ]
     },
